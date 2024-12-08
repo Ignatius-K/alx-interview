@@ -3,11 +3,8 @@
 '''Module defines the island_perimeter method'''
 
 
-from typing import Iterable, List
-
-
-def getSquarePerimeter(
-    grid: List[List[int]], /,
+def get_square_perimeter(
+    grid, /,
     height: int, width: int,
     row: int, column: int
 ):
@@ -33,7 +30,7 @@ def getSquarePerimeter(
     return perimeter
 
 
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid) -> int:
     """
     Calculates the perimeter of an island_perimeter
 
@@ -44,17 +41,16 @@ def island_perimeter(grid: List[List[int]]) -> int:
         (int) The island perimeter
     """
     perimeter = 0
-    if grid is None or not isinstance(grid, Iterable) or len(grid) == 0:
+    if grid is None or len(grid) == 0:
         return perimeter
-    if not isinstance(grid[0], Iterable) or len(grid[0]) == 0:
+    if len(grid[0]) == 0:
         return perimeter
 
     height, width = len(grid), len(grid[0])
     for row in range(height):
         for column in range(width):
             if grid[row][column] == 1:
-                print(f'ROW: {row}\tCOLUMN: {column}')
-                perimeter += getSquarePerimeter(
+                perimeter += get_square_perimeter(
                     grid,
                     height=height, width=width,
                     row=row, column=column
@@ -62,13 +58,13 @@ def island_perimeter(grid: List[List[int]]) -> int:
     return perimeter
 
 
-if __name__ == '__main__':
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
+# if __name__ == '__main__':
+#     grid = [
+#         [0, 0, 0, 0, 0, 0],
+#         [0, 1, 0, 0, 0, 0],
+#         [0, 1, 0, 0, 0, 0],
+#         [0, 1, 1, 1, 0, 0],
+#         [0, 0, 0, 0, 0, 0]
+#     ]
 
-    print(island_perimeter(grid))
+#     print(island_perimeter(grid))
