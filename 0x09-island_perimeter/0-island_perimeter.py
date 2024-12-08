@@ -4,9 +4,9 @@
 
 
 def get_square_perimeter(
-    grid, /,
-    height: int, width: int,
-    row: int, column: int
+    grid,
+    height, width,
+    row, column
 ):
     """
     Calculates the perimeter added by one square
@@ -30,7 +30,7 @@ def get_square_perimeter(
     return perimeter
 
 
-def island_perimeter(grid) -> int:
+def island_perimeter(grid):
     """
     Calculates the perimeter of an island_perimeter
 
