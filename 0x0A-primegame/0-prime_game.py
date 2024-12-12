@@ -35,9 +35,12 @@ def is_winner(x, nums):
         wins.append(get_winner_for_round(nums[i]))
     first_player_wins = wins.count(0)
     last_player_wins = wins.count(1)
-    # if first_player_wins == last_player_wins:
-    #     return None
-    return 'Maria' if first_player_wins >= last_player_wins else 'Ben'
+
+    if first_player_wins > last_player_wins:
+        return 'Maria'
+    if last_player_wins > first_player_wins:
+        return 'Ben'
+    return None
 
 
 def get_winner_for_round(n):
