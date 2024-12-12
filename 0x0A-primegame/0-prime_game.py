@@ -14,7 +14,7 @@ Notes:
 """
 
 
-def is_winner(x: int, nums: list[int]) -> str | None:
+def is_winner(x, nums):
     """Gets the winner
 
     Args:
