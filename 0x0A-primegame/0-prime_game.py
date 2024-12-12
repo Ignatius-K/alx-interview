@@ -29,10 +29,13 @@ def is_winner(x, nums):
 
     wins = []
     possible_rounds = len(nums)
+    if x > possible_rounds:
+        return None
     for i in range(x):
         if i >= possible_rounds:
             break
         wins.append(get_winner_for_round(nums[i]))
+    # print(wins)
     first_player_wins = wins.count(0)
     last_player_wins = wins.count(1)
     if first_player_wins == last_player_wins:
@@ -65,3 +68,10 @@ def get_winner_for_round(n):
 
 
 isWinner = is_winner
+
+
+if __name__ == '__main__':
+    print("Winner: {}".format(isWinner(3, [4, 5, 1])))
+    print("Winner: {}".format(isWinner(5, [2, 5])))
+    print("Winner: {}".format(isWinner(1, [7, 5, 1, 4])))
+    print("Winner: {}".format(isWinner(5, [11, 5, 1, 4, 3])))
