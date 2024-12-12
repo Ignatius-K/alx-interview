@@ -32,7 +32,10 @@ def is_winner(x, nums):
     for i in range(x):
         if i >= possible_rounds:
             break
-        wins.append(get_winner_for_round(nums[i]))
+        winner = get_winner_for_round(nums[i])
+        if winner is not None:
+            wins.append(winner)
+
     first_player_wins = wins.count(0)
     last_player_wins = wins.count(1)
 
