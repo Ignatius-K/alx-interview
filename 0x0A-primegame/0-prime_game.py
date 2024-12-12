@@ -52,6 +52,9 @@ def get_winner_for_round(n):
     Return:
         (int): The key of the player
     """
+    if n < 1:
+        return None
+
     winner = 1
     _nums = range(1, n + 1)
     while True:
